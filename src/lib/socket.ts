@@ -2,6 +2,12 @@ import { io, Socket } from "socket.io-client";
 
 const SERVER_URL = import.meta.env.VITE_SERVER_URL || undefined;
 
+if (!SERVER_URL && import.meta.env.PROD) {
+  console.warn(
+    "[文字麻将] VITE_SERVER_URL 未设置！生产环境必须配置后端服务器地址。"
+  );
+}
+
 let socket: Socket | null = null;
 
 export function getSocket(): Socket {

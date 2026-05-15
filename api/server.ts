@@ -10,6 +10,10 @@ const io = new Server(server, {
   cors: { origin: "*", methods: ["GET", "POST"] },
 });
 
+app.get("/api/health", (_req, res) => {
+  res.json({ status: "ok", timestamp: Date.now() });
+});
+
 const rooms = new Map<string, GameState>();
 const roomPasswords = new Map<string, string>();
 const playerRoomMap = new Map<string, string>();
