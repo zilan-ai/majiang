@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=ZCOOL+XiaoWei&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Noto Serif SC", "SimSun", "Songti SC", serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: #0d0d1a;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+html {
+  height: 100%;
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background: rgba(194, 54, 22, 0.3);
+  color: #f5f0e8;
+}
+
+@layer utilities {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .safe-top {
+    padding-top: env(safe-area-inset-top, 0px);
+  }
+  .safe-left {
+    padding-left: env(safe-area-inset-left, 0px);
+  }
+  .safe-right {
+    padding-right: env(safe-area-inset-right, 0px);
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile-tile {
+    width: 2.75rem !important;
+    height: 3.75rem !important;
+  }
+  .mobile-tile .tile-char {
+    font-size: 1.125rem !important;
+  }
+  .mobile-tile .tile-badge {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+  }
+  .mobile-tile .tile-badge span {
+    font-size: 6px !important;
+  }
+  .mobile-tile .func-corner {
+    width: 1.25rem !important;
+    height: 1.25rem !important;
+  }
+  .mobile-tile .func-label {
+    font-size: 5px !important;
+  }
+  .mobile-tile .cat-corner {
+    width: 0.875rem !important;
+    height: 0.875rem !important;
+  }
+  .mobile-mini-tile {
+    width: 1.75rem !important;
+    height: 2.5rem !important;
+  }
+  .mobile-mini-tile .tile-char {
+    font-size: 0.75rem !important;
+  }
+}

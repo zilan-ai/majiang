@@ -1,0 +1,18 @@
+{
+  "name": "文字麻将 · 脑洞大开版",
+  "short_name": "文字麻将",
+  "description": "以字为牌，以句为胡——当麻将遇上汉字，一切皆可成句",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0d0d1a",
+  "theme_color": "#0d0d1a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
