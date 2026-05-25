@@ -1,0 +1,11 @@
+{
+  "build": {
+    "cmd": "npm run build"
+  },
+  "start": {
+    "cmd": "npm start"
+  },
+  "healthcheck": {
+    "path": "/api/health"
+  }
+}

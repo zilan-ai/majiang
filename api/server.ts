@@ -1,8 +1,13 @@
 import express from "express";
 import { createServer } from "http";
 import { Server } from "socket.io";
+import path from "path";
+import { fileURLToPath } from "url";
 import { GameState, Player, RoomInfo, TileData } from "../shared/types";
 import { createGame, drawTile, playTile, eatTile, playAfterEat, declareWin, castWinApprovalVote, castFinalVote, checkFinalVotingComplete, resolveFinalVoting, executeFunctionCard, finishFunctionCard, getPublicGameState, appendLog } from "./gameEngine";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const distPath = path.resolve(__dirname, "../dist");
 
 const app = express();
 const server = createServer(app);
@@ -12,6 +17,12 @@ const io = new Server(server, {
 
 app.get("/api/health", (_req, res) => {
   res.json({ status: "ok", timestamp: Date.now() });
+});
+
+app.use(express.static(distPath));
+
+app.get("/{*splat}", (_req, res) => {
+  res.sendFile(path.join(distPath, "index.html"));
 });
 
 const rooms = new Map<string, GameState>();

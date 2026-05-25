@@ -8,7 +8,7 @@
     "dev:client": "vite",
     "dev:server": "tsx watch api/server.ts",
     "start": "npx tsx api/server.ts",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "check": "tsc -b --noEmit"
